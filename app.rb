@@ -27,3 +27,18 @@ get '/bands/:id' do
   @band = Band.find(band_id)
   erb :band
 end
+
+post '/add_show' do
+  band = Band.find(params.fetch("band_id"))
+  params['venue_id'].each do |venue_id|
+    venue = Venue.find(venue_id.to_i)
+    band.venues << venue
+  end
+  redirect back
+end
+
+patch '/bands/:id' do
+  band = Band.find(params.fetch("id").to_i)
+  band.update(name: params.fetch("name"))
+  redirect back
+end
