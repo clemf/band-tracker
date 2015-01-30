@@ -42,3 +42,8 @@ patch '/bands/:id' do
   band.update(name: params.fetch("name"))
   redirect back
 end
+
+delete '/bands/:id' do
+  Band.destroy(params.fetch("id").to_i)
+  redirect '/'
+end

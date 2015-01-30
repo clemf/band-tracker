@@ -40,4 +40,11 @@
 
 <hr>
 
+<form action="/bands/<%= @band.id %>" method="post">
+	<input type=hidden name="_method" value="delete">
+	<button class="btn btn-danger">Delete band</button>
+</form>
+
+<hr>
+
 <a href="/">Back to index.</a>
