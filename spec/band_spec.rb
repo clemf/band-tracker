@@ -10,3 +10,10 @@ describe Band do
     expect(test.valid?).to eq false
   end
 end
+
+describe Band do
+  it 'capitalizes first letter of band name' do
+    test = Band.create(name: "blur")
+    expect(test.name).to eq "Blur"
+  end
+end
