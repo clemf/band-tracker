@@ -14,3 +14,9 @@ post '/add_band' do
   Band.create(name: name)
   redirect back
 end
+
+post '/add_venue' do
+  name = params.fetch("name")
+  Venue.create(name: name)
+  redirect back
+end
