@@ -20,3 +20,10 @@ post '/add_venue' do
   Venue.create(name: name)
   redirect back
 end
+
+get '/bands/:id' do
+  @venues = Venue.all
+  band_id = params.fetch("id").to_i
+  @band = Band.find(band_id)
+  erb :band
+end
