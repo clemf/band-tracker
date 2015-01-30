@@ -1,1 +1,18 @@
-<p>test</p>
+<div class="col-md-6">
+	<div class="header">
+		<h2>Bands</h2>
+	</div>
+	<ul>
+		<% @bands.each do |band| %>
+			<li><%= band.name %></li>
+		<% end %>
+	</ul>
+
+	<form action="/add_band" method="post" class="form-inline">
+		<div class="form-group">
+			<label for="name" class="sr-only">Band name</label>
+			<input name="name" type="text" placeholder="Enter band name" class="form-control">
+		</div>
+		<button type="submit" class="btn btn-default">Add band</button>
+	</form>
+</div>
