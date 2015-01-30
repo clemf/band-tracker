@@ -8,3 +8,9 @@ get '/' do
   @venues = Venue.all
   erb :index
 end
+
+post '/add_band' do
+  name = params.fetch("name")
+  Band.create(name: name)
+  redirect back
+end
